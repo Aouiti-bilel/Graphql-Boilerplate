@@ -1,0 +1,27 @@
+{
+  "name": "2",
+  "version": "1.0.0",
+  "description": "GraphQl In Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm .",
+    "server": "nodemon -r esm"
+  },
+  "author": "bolbol",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.15",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
