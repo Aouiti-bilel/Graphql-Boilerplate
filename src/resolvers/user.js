@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
+import bcrypt from 'bcryptjs';
+import Joi from 'joi'
 import User from "../models/User"
-import bcrypt from 'bcryptjs'
 // USER RESOLVER
 export default {
     Query: {
@@ -14,6 +15,7 @@ export default {
     },
     Mutation: {
         signUp: async (root, args, ctx, info) => {
+            await Joi.validate(args, signup, { abortEarly: false })
              const user = await User.create(args)
              const payload = {
                 user: {
