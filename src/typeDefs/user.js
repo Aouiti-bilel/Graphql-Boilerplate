@@ -10,6 +10,7 @@ export default gql `
         signUp(email: String, username: String!, name: String!, password: String!): UsetInputType!
         signIn(email: String, password: String!): UsetInputType!
         }
+     
         type User {
           id: ID!
           email: String!
