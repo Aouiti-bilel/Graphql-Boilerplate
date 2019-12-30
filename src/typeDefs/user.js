@@ -3,18 +3,24 @@ import { gql } from 'apollo-server-express'
 //USER SCHEMA
 export default gql `
     extend type Query {
-         me: String!
+         me: User!  @auth
+         user(email: String!, password: String!): User! @auth
         }
     extend type Mutation {
-         user(email: String, passord: String): User
-       }
+        signUp(email: String, username: String!, name: String!, password: String!): UsetInputType!
+        signIn(email: String, password: String!): UsetInputType!
+        }
         type User {
-        id: ID!
-        email: String!
-        username: String!
-        name: String!
-        createdAt: String
-        updatedAt: String
+          id: ID!
+          email: String!
+          username: String!
+          name: String!
+          createdAt: String
+          updatedAt: String
+         }
+        type UsetInputType {
+          user: User!
+          token: String!
         }
 
 `
